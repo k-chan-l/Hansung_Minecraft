@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="MqttHP:jar">
+    <output-path>$PROJECT_DIR$/../Plugins/Server/plugins</output-path>
+    <root id="archive" name="MqttHP.jar">
+      <element id="module-output" name="MqttHP" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+      <element id="library" level="project" name="Maven: org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5" />
+      <element id="library" level="project" name="Maven: org.jetbrains:annotations:22.0.0" />
+    </root>
+  </artifact>
+</component>
