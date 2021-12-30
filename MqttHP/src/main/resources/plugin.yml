@@ -1,0 +1,14 @@
+name: MqttHP
+version: '${project.version}'
+main: lkc.mqtthp.Main
+api-version: 1.17
+
+
+commands:
+  sendmqtt:
+    usage: /<command> <topic> <payload>
+    description: Send a payload to an mqtt topic
+
+  hit:
+    usage: /<command>
+    description: hit self
