@@ -1,0 +1,9 @@
+name: NPCPlugin
+version: '${project.version}'
+main: lkc.npcplugin.NPCPlugin
+api-version: 1.18
+depend: [ Citizens ]
+commands:
+  settingnpc:
+    description: npc 세팅
+    usage: /<command>
