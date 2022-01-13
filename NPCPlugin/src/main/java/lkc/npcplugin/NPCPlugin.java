@@ -1,30 +1,34 @@
 package lkc.npcplugin;
 
+import lkc.npcplugin.chats.ChatBubbles;
+import lkc.npcplugin.chats.ChatBuffer;
 import lkc.npcplugin.commands.NPCCheckAndSpawn;
+import lkc.npcplugin.events.NPCEvent;
 import lkc.npcplugin.events.PlayerEvent;
-import lkc.npcplugin.traits.npctraits;
-import net.citizensnpcs.api.npc.NPC;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.logging.Level;
-
 public final class NPCPlugin extends JavaPlugin {
-    boolean npccheck = false;
-    Iterable<NPC> npcs;
+    private static NPCPlugin instance;
+    private boolean disableChatWindow;
+    private ChatBuffer buffer;
+    public ChatBubbles bubbles;
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
-//        if(getServer().getPluginManager().getPlugin("Citizens") == null || !getServer().getPluginManager().getPlugin("Citizens").isEnabled()) {
-//            getLogger().log(Level.SEVERE, "Citizens 2.0 not found or not enabled");
-//            getServer().getPluginManager().disablePlugin(this);
-//            return;
-//        }
-//        net.citizensnpcs.api.CitizensAPI.getTraitFactory().registerTrait(net.citizensnpcs.api.trait.TraitInfo.create(npctraits.class).withName("mytraitname"));
+        NPCPlugin.instance = this;
+        //-------------------npc 대화 관련 코드 ----------------------------
+        saveDefaultConfig();
+        disableChatWindow = getConfig().getBoolean("disableChatWindow");
+        bubbles = new ChatBubbles(this);
+        buffer = new ChatBuffer(this);
+        getServer().getPluginManager().registerEvents(new NPCEvent(), this);
+        //----------------------------------------------------------------
+
+
         NPCCheckAndSpawn settingnpc = new NPCCheckAndSpawn();//npc 확인후 소환
         getServer().getPluginManager().registerEvents(new PlayerEvent(), this);//  PlayerJoinEvent
-        getCommand("settingnpc").setExecutor(settingnpc);//npc 확인후 소환 등록
+        getCommand("settingnpc").setExecutor(settingnpc);//npc 확인후 소환 등록 명령어
         getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "[NPCPlugin]: Plugin is enabled!");
     }
 
@@ -32,5 +36,16 @@ public final class NPCPlugin extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
         getServer().getConsoleSender().sendMessage(ChatColor.RED + "[NPCPlugin]: Plugin is disabled!");
+    }
+    public ChatBuffer getbuffer(){
+        return buffer;
+    }
+
+    public ChatBubbles getBubbles(){
+        return bubbles;
+    }
+
+    public static NPCPlugin getInstance() {
+        return NPCPlugin.instance;
     }
 }

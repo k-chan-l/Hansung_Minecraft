@@ -1,6 +1,8 @@
 package lkc.npcplugin.commands;
 
 import net.citizensnpcs.api.CitizensAPI;
+import net.citizensnpcs.api.ai.Goal;
+import net.citizensnpcs.api.ai.GoalSelector;
 import net.citizensnpcs.api.ai.speech.SpeechContext;
 import net.citizensnpcs.api.npc.NPC;
 import org.bukkit.Location;
@@ -38,6 +40,8 @@ public class NPCCheckAndSpawn implements CommandExecutor {
         if(!flag){
             NPC npc = CitizensAPI.getNPCRegistry().createNPC(EntityType.PLAYER,name);
             npc.spawn(new Location(getServer().getWorld("world"), -36, 65, 160));
+            npc.getDefaultSpeechController().speak(new SpeechContext((String)"hi"));
+
             return false;
         }
             return true;
