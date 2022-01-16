@@ -1,0 +1,5 @@
+name: NpcChat
+version: '${project.version}'
+main: lkc.npcchat.NpcChat
+api-version: 1.18
+depend: [ Citizens ]

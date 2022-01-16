@@ -1,7 +1,6 @@
 package lkc.npcplugin.events;
 
 import lkc.npcplugin.NPCPlugin;
-import lkc.npcplugin.chats.ChatBuffer;
 import net.citizensnpcs.api.CitizensAPI;
 import net.citizensnpcs.api.ai.speech.SpeechContext;
 import net.citizensnpcs.api.npc.NPC;
@@ -21,9 +20,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import static org.bukkit.Bukkit.getServer;
 
 public class PlayerEvent implements Listener {
-    static SpeechContext sp;
-    private static boolean disableChatWindow;
-    private static ChatBuffer buffer;
 
     @EventHandler
     public static void onPlayerJoin(PlayerJoinEvent event) throws IOException {
