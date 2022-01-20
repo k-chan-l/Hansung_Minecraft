@@ -11,11 +11,9 @@ public final class NPCPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         NPCPlugin.instance = this;
-
-
-        NPCCheckAndSpawn settingnpc = new NPCCheckAndSpawn();//npc 확인후 소환
+//        NPCCheckAndSpawn settingnpc = new NPCCheckAndSpawn();//npc 확인후 소환
+//        getCommand("settingnpc").setExecutor(settingnpc);//npc 확인후 소환 등록 명령어
         getServer().getPluginManager().registerEvents(new PlayerEvent(), this);//  PlayerJoinEvent
-        getCommand("settingnpc").setExecutor(settingnpc);//npc 확인후 소환 등록 명령어
         getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "[NPCPlugin]: Plugin is enabled!");
     }
 
