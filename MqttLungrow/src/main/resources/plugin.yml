@@ -1,0 +1,4 @@
+name: MqttLungrow
+version: '${project.version}'
+main: lkc.mqttlungrow.MqttLungrow
+api-version: 1.18
