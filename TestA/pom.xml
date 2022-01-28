@@ -73,7 +73,10 @@
         <dependency>
             <groupId>lkc</groupId>
             <artifactId>TestB</artifactId>
-            <version>1.0.1</version>
+            <scope>system</scope>
+            <version>1.0.2</version>
+            <systemPath>${project.basedir}/src/lib/TestB-1.0.2.jar</systemPath>
         </dependency>
+
     </dependencies>
 </project>
