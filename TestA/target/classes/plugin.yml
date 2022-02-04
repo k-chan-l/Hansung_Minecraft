@@ -1,0 +1,10 @@
+name: TestA
+version: '1.0.0'
+main: lkc.testa.TestA
+api-version: 1.18
+depend: [ TestB ]
+
+commands:
+  testBMethod:
+    usage: /<command>
+    description: Use TestB Method

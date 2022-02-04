@@ -1,0 +1,4 @@
+name: TestB
+version: '1.0.2'
+main: lkc.testb.TestB
+api-version: 1.18
