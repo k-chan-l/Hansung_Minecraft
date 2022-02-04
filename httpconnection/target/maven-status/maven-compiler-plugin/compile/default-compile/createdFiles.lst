@@ -1,4 +1,6 @@
-lkc\httpconnection\commands\commandGetHttp.class
 lkc\httpconnection\httpconnection.class
+lkc\httpconnection\formatters\jsonFormatter.class
+lkc\httpconnection\files\ConfigureFile.class
+lkc\httpconnection\commands\commandGetHttp.class
 lkc\httpconnection\http\httpGet$1.class
 lkc\httpconnection\http\httpGet.class

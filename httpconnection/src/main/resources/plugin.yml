@@ -1,0 +1,9 @@
+name: httpconnection
+version: '${project.version}'
+main: lkc.httpconnection.httpconnection
+api-version: 1.18
+
+commands:
+  gethttp:
+    usage: /<command> <topic> <payload>
+    description: Send a payload to an http topic
