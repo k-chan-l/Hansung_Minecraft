@@ -1,0 +1,5 @@
+name: MqttHolo
+version: '${project.version}'
+main: lkc.holographic.MqttHolo
+api-version: 1.18
+softdepend: [ HolographicDisplays, event ]

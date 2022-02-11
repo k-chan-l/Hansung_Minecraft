@@ -1,0 +1,4 @@
+name: event
+version: '${project.version}'
+main: lkc.lungrow.Lungrow
+api-version: 1.18
