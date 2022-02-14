@@ -62,7 +62,7 @@ public class httpGet {
                     ResponseBody responseBody = response.body();
                     jsonstring = responseBody.string();
                     sender.sendMessage(ChatColor.GREEN + "http success");
-                    sender.sendMessage(ChatColor.GREEN + "response:" + jsonstring);
+//                    sender.sendMessage(ChatColor.GREEN + "response:" + jsonstring);
                     httpGetClearEvent hGCE = new httpGetClearEvent(jsonstring, true);
                     Bukkit.getScheduler().runTask(httpCon, () -> Bukkit.getServer().getPluginManager().callEvent(hGCE));
                 }

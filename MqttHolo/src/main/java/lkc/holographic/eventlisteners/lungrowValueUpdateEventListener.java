@@ -43,6 +43,8 @@ public class lungrowValueUpdateEventListener implements Listener {
     @EventHandler
     public void onButtonClickEvent(PlayerInteractEvent event){
         getServer().getConsoleSender().sendMessage(ChatColor.RED + "click event 호출");
+        if(event.getClickedBlock() == null)
+            return;
         controlRedStoneLamp.resetBlock(event.getClickedBlock(), event.getPlayer());
     }
 

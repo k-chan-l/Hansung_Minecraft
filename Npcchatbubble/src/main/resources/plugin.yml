@@ -1,0 +1,5 @@
+name: Npcchatbubble
+version: '${project.version}'
+main: lkc.npcchatbubble.Npcchatbubble
+api-version: 1.18
+softdepend: [ HolographicDisplays, event ]

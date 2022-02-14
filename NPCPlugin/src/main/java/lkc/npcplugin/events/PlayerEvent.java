@@ -4,22 +4,13 @@ import com.google.gson.JsonObject;
 import lkc.lungrow.events.JsonObjectParsingEvent;
 import lkc.npcplugin.NPCPlugin;
 import lkc.npcplugin.npc.Guide;
-import net.citizensnpcs.api.CitizensAPI;
-import net.citizensnpcs.api.ai.speech.SpeechContext;
-import net.citizensnpcs.api.npc.NPC;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Location;
-import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
-import org.bukkit.scheduler.BukkitScheduler;
-
 import java.io.IOException;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 import static org.bukkit.Bukkit.*;
 

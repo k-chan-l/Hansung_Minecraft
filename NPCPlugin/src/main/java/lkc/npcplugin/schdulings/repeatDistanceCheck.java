@@ -1,5 +1,6 @@
 package lkc.npcplugin.schdulings;
 
+import lkc.lungrow.events.npcSpeakEvent;
 import lkc.npcplugin.NPCPlugin;
 import lkc.npcplugin.npc.NPCCheck;
 import net.citizensnpcs.api.ai.speech.SpeechContext;
@@ -61,12 +62,12 @@ public class repeatDistanceCheck {
                 scheduler.cancelTasks(plugin);
                 return;
             }
-        if(isDistanceOverNum(npc.getEntity().getLocation(), player.getLocation(), 10)) {//움직이지 않는데 거리가 10이상일 경우
+        if(isDistanceOverNum(npc.getEntity().getLocation(), player.getLocation(), 7)) {//움직이지 않는데 거리가 7이상일 경우
             flag.set(false);
         }
         else{//움직이지 않는데 거리가 10미만일경우
             NPCChecker();
-            if (isDistanceOverNum(npc.getEntity().getLocation(), loc, 5)) {//움직이지 않고 거리가 10미만이면서 목표와의 거리가 5이상 차이나는 경우
+            if (isDistanceOverNum(npc.getEntity().getLocation(), loc, 5)) {//움직이지 않고 거리가 7미만이면서 목표와의 거리가 5이상 차이나는 경우
                 whileNPCStayAndFarawayGoal();
             } else {//움직이지 않고 거리가 10미만이면서 목표와의 거리가 5미만일 경우
                 whileNPCStayAndNearbyGoal();
@@ -86,7 +87,7 @@ public class repeatDistanceCheck {
 
     private void whileNPCStayAndFarawayGoalFlagTrue(){
         Location temp = npc.getEntity().getLocation();
-        temp.setY(temp.getY()+0.2);
+        temp.setY(temp.getY() + 0.5);
         npc.despawn();
         npc.spawn(temp);
         flag.set(false);
@@ -109,7 +110,9 @@ public class repeatDistanceCheck {
         if(isDistanceOverNum(npc.getEntity().getLocation(), player.getLocation(), 10)) {//움직이면서 캐릭터와 거리가 10이상일경우
             npc.getNavigator().cancelNavigation();
             npc.faceLocation(player.getLocation());
-            npc.getDefaultSpeechController().speak(new SpeechContext((String) "얼른 이리로와"));
+//            npc.getDefaultSpeechController().speak(new SpeechContext((String) "얼른 이리로와"));
+            npcSpeakEvent event = new npcSpeakEvent(npc.getEntity(), "얼른 이리로와");
+            getServer().getPluginManager().callEvent(event);
             getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "Stop and Wait");
         }
         else

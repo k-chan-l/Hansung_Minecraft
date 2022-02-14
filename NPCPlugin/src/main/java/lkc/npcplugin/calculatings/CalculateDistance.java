@@ -8,7 +8,6 @@ import static org.bukkit.Bukkit.getServer;
 
 public class CalculateDistance {
     public static boolean isDistanceOverNum(Location a, Location b, double num){
-
         if(DistanceCaculating(a,b) >= num)
             return true;
         else

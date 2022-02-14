@@ -1,5 +1,6 @@
 package lkc.npcplugin.schdulings;
 
+import lkc.lungrow.events.npcSpeakEvent;
 import lkc.npcplugin.NPCPlugin;
 import net.citizensnpcs.api.npc.NPC;
 import org.bukkit.Bukkit;
@@ -32,8 +33,11 @@ public class waitfiveseconds {
         scheduler.scheduleSyncDelayedTask(plugin, new Runnable() {
             @Override
             public void run() {
+                npcSpeakEvent event = new npcSpeakEvent(npc.getEntity(), "안녕");
+                getServer().getPluginManager().callEvent(event);
                 repeatDistanceCheck rdc = new repeatDistanceCheck(plugin, player, npc, loc, flag);
                 rdc.Scheduling();
+
             }
         }, 20L * 5); //20 Tick (1 Second) * 5 delay before run() is called
     }
