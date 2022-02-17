@@ -23,13 +23,13 @@ public final class MqttLungrow extends JavaPlugin {
         getServer().getPluginManager().registerEvents(JOPEL, this);
         getServer().getPluginManager().registerEvents(new PlayerExitEventListener(JOPEL), this);
         MqttLungrow.instance = this;
-        getServer().getConsoleSender().sendMessage(ChatColor.RED + "[MqttLungrow]: Plugin is enabled!");
+        getServer().getConsoleSender().sendMessage(ChatColor.RED + "[MqttLungrow] Plugin is enabled!");
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-        getServer().getConsoleSender().sendMessage(ChatColor.RED + "[MqttLungrow]: Plugin is disabled!");
+        getServer().getConsoleSender().sendMessage(ChatColor.RED + "[MqttLungrow] Plugin is disabled!");
     }
 
     public static MqttLungrow getInstance() {

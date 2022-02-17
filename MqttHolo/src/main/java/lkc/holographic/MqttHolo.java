@@ -17,6 +17,7 @@ public final class MqttHolo extends JavaPlugin {
             this.setEnabled(false);
             return;
         }
+        getLogger().info("[MqttHolo] Enable");
         lungrowValueUpdateEventListener lVUEL = new lungrowValueUpdateEventListener(this);
         getServer().getPluginManager().registerEvents(new playerJoinEventLIstener(lVUEL, this),this);
 
@@ -27,5 +28,6 @@ public final class MqttHolo extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+        getLogger().info("[MqttHolo] Disable");
     }
 }

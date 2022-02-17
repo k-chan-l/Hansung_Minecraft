@@ -32,7 +32,7 @@ public class JsonObjectParsingEventListener implements Listener {
     @EventHandler
     public static void OnJsonObjectParsingEvent(JsonObjectParsingEvent event){
         if(event.isFlag()) {
-            getLogger().info("JsonObejctParsingEvent1");
+            getLogger().info("[MqttLungrow] JsonObejctParsingEvent");
             JsonObject jsonObject = event.getJsonObject();
             TopicFormatter(jsonObject.get("playerID").toString());
             ClientIDFormatter(jsonObject.get("playerInfo").getAsJsonObject().get("playerName").toString());

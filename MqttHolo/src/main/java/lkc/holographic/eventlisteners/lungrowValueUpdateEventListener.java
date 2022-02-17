@@ -42,7 +42,6 @@ public class lungrowValueUpdateEventListener implements Listener {
 
     @EventHandler
     public void onButtonClickEvent(PlayerInteractEvent event){
-        getServer().getConsoleSender().sendMessage(ChatColor.RED + "click event 호출");
         if(event.getClickedBlock() == null)
             return;
         controlRedStoneLamp.resetBlock(event.getClickedBlock(), event.getPlayer());
@@ -52,7 +51,7 @@ public class lungrowValueUpdateEventListener implements Listener {
     @EventHandler
     public static void OnJsonObjectParsingEvent(JsonObjectParsingEvent event){
         if(event.isFlag()) {
-            getLogger().info("JsonObjectParsingEventArrived");
+            getLogger().info("[MqttHolo] JsonObejctParsingEvent");
             JsonObject jsonObject = event.getJsonObject().get("playerInfo").getAsJsonObject();
             JsonObject button = jsonObject.get("button").getAsJsonObject();
             JsonObject redStone = jsonObject.get("redstone").getAsJsonObject();

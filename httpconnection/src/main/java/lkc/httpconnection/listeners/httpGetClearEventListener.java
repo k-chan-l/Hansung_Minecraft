@@ -28,6 +28,7 @@ public class httpGetClearEventListener implements Listener {
             else {
                 JOPEvent.setFlag(true);
                 JOPEvent.setJsonObject(jsonObject);
+                JOPEvent.setPlayer(event.getPlayer());
                 Bukkit.getScheduler().runTask(httpCon, () -> Bukkit.getServer().getPluginManager().callEvent(JOPEvent));
             }
         }

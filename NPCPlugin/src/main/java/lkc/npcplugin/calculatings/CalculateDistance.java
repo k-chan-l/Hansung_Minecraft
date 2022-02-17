@@ -23,7 +23,7 @@ public class CalculateDistance {
         double b_y = b.getY();
         double b_z = b.getZ();
         double ans = Math.sqrt(Math.pow(a_x - b_x,2) + Math.pow(a_y - b_y,2) + Math.pow(a_z - b_z,2));
-        getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "" + ans);
+//        getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "" + ans);
         return ans;
     }
 

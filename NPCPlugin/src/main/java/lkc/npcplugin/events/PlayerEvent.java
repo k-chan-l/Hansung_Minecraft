@@ -26,7 +26,7 @@ public class PlayerEvent implements Listener {
     @EventHandler
     public static void OnJsonObjectParsingEvent(JsonObjectParsingEvent event){
         if(event.isFlag()) {
-            getLogger().info("JsonObejctParsingEvent2");
+            getLogger().info("[NPCPlugin] JsonObejctParsingEvent");
             JsonObject jsonObject = event.getJsonObject().get("playerInfo").getAsJsonObject();
             JsonObject npctarget = jsonObject.get("npctarget").getAsJsonObject();
             NPCPlugin plugin = NPCPlugin.getInstance();

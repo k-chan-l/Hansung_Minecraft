@@ -3,6 +3,7 @@ package lkc.holographic.blocks;
 import com.gmail.filoghost.holographicdisplays.api.Hologram;
 import com.gmail.filoghost.holographicdisplays.api.HologramsAPI;
 import com.gmail.filoghost.holographicdisplays.api.line.TextLine;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -19,7 +20,7 @@ public class controlRedStoneLamp {
     private int preexhale = 0;
     private int inhale = 0;
     private int exhale = 0;
-    private int blockcount = 0;
+    private int blockcount;
     private Location loc;
     private Location btnloc;
     private Plugin plugin;
@@ -40,10 +41,11 @@ public class controlRedStoneLamp {
         btnloc = buttonloc;
         this.plugin = plugin;
         fillBlockAir(loc);
+        blockcount = 0;
         hologram = HologramsAPI.createHologram(this.plugin, holo);
-        textLine1 = hologram.appendTextLine("A hologram line");
-        textLine2 = hologram.appendTextLine("A hologram line");
-        textLine3 = hologram.appendTextLine("A hologram line");
+        textLine1 = hologram.appendTextLine("Lungrow 디바이스를 켜고");
+        textLine2 = hologram.appendTextLine("어플리케이션을 실행하면");
+        textLine3 = hologram.appendTextLine("시작됩니다.");
     }
 
     public void updateLungrowValue(int inhale, int exhale){
@@ -64,6 +66,7 @@ public class controlRedStoneLamp {
     public void resetBlock(Block block, Player player){
         Location location = block.getLocation();
         if(!(location.getX() == btnloc.getX() && location.getY() == btnloc.getY() && location.getZ() == btnloc.getZ() && location.getBlock().getType() == Material.STONE_BUTTON)) return;
+        getServer().getConsoleSender().sendMessage(ChatColor.RED + "click event 호출");
         if(blockcount < 10) {
             textLine2.setText("아직 블럭을 초기화 할 수 없습니다.");
             return;
@@ -71,7 +74,6 @@ public class controlRedStoneLamp {
         getLogger().info("Reset Block");
         fillBlockAir(loc);
         player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1F, 2F);
-
         blockcount = 0;
     }
 

@@ -1,0 +1,5 @@
+name: Checkpath
+version: '${project.version}'
+main: lkc.checkpath.Checkpath
+api-version: 1.18
+softdepend: [ event ]
