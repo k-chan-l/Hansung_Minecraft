@@ -7,7 +7,7 @@
 
 ## LungrowEvent
 
-마인크래프트에서 사용하는 커스텀 이벤트 모음 각 플러그인 끼리 변수를 주고 받으려면 해당 플러그인을 꼭 라이브러리에 [등록](https://github.com/k-chan-l/Hansung_Minecraft/wiki/JAVA-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0#%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EC%82%AC%EC%9A%A9)해야함
+마인크래프트에서 사용하는 커스텀 이벤트 모음 각 플러그인 끼리 변수를 주고 받으려면 해당 플러그인을 꼭 라이브러리에 [등록](https://github.com/k-chan-l/Hansung_Minecraft/wiki/JAVA-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0#%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EC%83%9D%EC%84%B1)해야함
 
 ---
 
