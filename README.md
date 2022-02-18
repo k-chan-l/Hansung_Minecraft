@@ -2,6 +2,11 @@
 
 
 ---
+
+## 사용 방법
+
+모든 플러그인 모두 다운 받은 후에 서버플러그인 폴더에 [설치](https://github.com/k-chan-l/Hansung_Minecraft/wiki/%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95#3-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B9%8C%EB%93%9C%ED%95%98%EA%B8%B0)하면 된다. 링크를 따라 끝까지 계속해서 진행
+
 ---
 
 
