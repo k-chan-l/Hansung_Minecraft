@@ -2,8 +2,11 @@ name: httpconnection
 version: '${project.version}'
 main: lkc.httpconnection.httpconnection
 api-version: 1.18
-softdepend: [ event ]
 commands:
   gethttp:
-    usage: /<command> <topic> <payload>
-    description: Send a payload to an http topic
+    usage: /<command>
+    description: http get method test
+
+  posthttp:
+    usage: /<command>
+    description: http post method test

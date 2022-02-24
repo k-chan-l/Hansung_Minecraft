@@ -1,27 +1,22 @@
-package lkc.npcplugin.events;
+package lkc.npcplugin.listeners;
 
 import com.google.gson.JsonObject;
-import lkc.lungrow.events.JsonObjectParsingEvent;
+import lkc.httpconnection.events.JsonObjectParsingEvent;
 import lkc.npcplugin.NPCPlugin;
 import lkc.npcplugin.npc.Guide;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import java.io.IOException;
+import java.util.HashMap;
 
 import static org.bukkit.Bukkit.*;
 
 public class PlayerEvent implements Listener {
-    public static Player player;
-    public static Guide guide;
 
-    @EventHandler
-    public static void onPlayerJoin(PlayerJoinEvent event) throws IOException {
-        player = event.getPlayer();
-    }
+    private static HashMap<String, Guide> guideHashMap = new HashMap<String, Guide>();
 
     @EventHandler
     public static void OnJsonObjectParsingEvent(JsonObjectParsingEvent event){
@@ -29,10 +24,16 @@ public class PlayerEvent implements Listener {
             getLogger().info("[NPCPlugin] JsonObejctParsingEvent");
             JsonObject jsonObject = event.getJsonObject().get("playerInfo").getAsJsonObject();
             JsonObject npctarget = jsonObject.get("npctarget").getAsJsonObject();
+            Player player = event.getPlayer();
             NPCPlugin plugin = NPCPlugin.getInstance();
             Location location = new Location(getServer().getWorld("world"),integerFormatter(npctarget, "x"), integerFormatter(npctarget, "y"), integerFormatter(npctarget, "z"));// 버튼 좌표 바꾸기
-            guide = new Guide(player, "fullwall", plugin, location);
+            Guide guide = new Guide(player, "fullwall", plugin, location);
             guide.init();
+            if(guideHashMap.containsKey(player.getName())) {
+                getLogger().info("[NPCPlugin] Guide is already exist");
+            }
+            else
+                guideHashMap.put(player.getName(),guide);
         }
         else {
             getLogger().severe("DB 오류 또는 등록되지 않은 유저입니다.");
@@ -41,7 +42,14 @@ public class PlayerEvent implements Listener {
 
     @EventHandler
     public static void onPlayerOut(PlayerQuitEvent event) throws IOException {
-        guide.getNpc().destroy();
+        String name = event.getPlayer().getName();
+        if(guideHashMap.containsKey(name)) {
+            guideHashMap.get(name).getNpc().destroy();
+            guideHashMap.remove(name);
+            getLogger().info("[NPCPlugin] Remove guide");
+        }
+        else
+            getLogger().info("[NPCPlugin] Guide is already removed");
     }
 
     public static int integerFormatter(JsonObject jsonObject, String name){

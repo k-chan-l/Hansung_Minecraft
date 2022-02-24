@@ -1,6 +1,6 @@
 package lkc.npcplugin.npc;
 
-import lkc.lungrow.events.npcSpeakEvent;
+import lkc.npcplugin.events.npcSpeakEvent;
 import lkc.npcplugin.NPCPlugin;
 import lkc.npcplugin.schdulings.waitfiveseconds;
 import net.citizensnpcs.api.CitizensAPI;
@@ -33,7 +33,7 @@ public class Guide {
     public void init(){
         npc = CitizensAPI.getNPCRegistry().createNPC(EntityType.PLAYER, npcName);
         npc.spawn(this.player.getLocation());
-        npc.getNavigator().getLocalParameters().range(255f);
+        npc.getNavigator().getLocalParameters().range(1024f);
 //        npc.getDefaultSpeechController().speak(new SpeechContext((String)"hi"));
         waitfiveseconds wfs = new waitfiveseconds(plugin, player, npc, location);
         wfs.Scheduling();

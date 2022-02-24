@@ -1,4 +1,4 @@
-package lkc.lungrow.events;
+package lkc.httpconnection.events;
 
 import com.google.gson.JsonObject;
 import org.bukkit.entity.Player;

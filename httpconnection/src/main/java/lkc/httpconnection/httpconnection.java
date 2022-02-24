@@ -1,7 +1,7 @@
 package lkc.httpconnection;
 
 import lkc.httpconnection.commands.commandGetHttp;
-import lkc.httpconnection.files.ConfigureFile;
+import lkc.httpconnection.commands.commandPostHttp;
 import lkc.httpconnection.listeners.httpGetClearEventListener;
 import lkc.httpconnection.listeners.playerExitWithJsonObjectEventListener;
 import lkc.httpconnection.listeners.playerJoinEventListener;
@@ -16,6 +16,7 @@ public final class httpconnection extends JavaPlugin {
         // Plugin startup logic
         httpCon = this;
         getCommand("gethttp").setExecutor(new commandGetHttp(httpCon));
+        getCommand("posthttp").setExecutor(new commandPostHttp(httpCon));
         getServer().getPluginManager().registerEvents(new playerJoinEventListener(httpCon), httpCon);
         getServer().getPluginManager().registerEvents(new httpGetClearEventListener(httpCon), httpCon);
         getServer().getPluginManager().registerEvents(new playerExitWithJsonObjectEventListener(httpCon), httpCon);

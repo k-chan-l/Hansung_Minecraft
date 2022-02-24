@@ -2,4 +2,12 @@ name: MqttLungrow
 version: '${project.version}'
 main: lkc.mqttlungrow.MqttLungrow
 api-version: 1.18
-softdepend: [ event ]
+softdepend: [ httpconnection ]
+commands:
+  subscribe:
+    usage: /<command> <topic>
+    description: http get method test
+
+  unsubscribe:
+    usage: /<command> <topic>
+    description: http post method test

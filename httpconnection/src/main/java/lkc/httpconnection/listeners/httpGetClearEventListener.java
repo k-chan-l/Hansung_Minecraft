@@ -1,9 +1,10 @@
 package lkc.httpconnection.listeners;
 
 import com.google.gson.JsonObject;
-import lkc.lungrow.events.JsonObjectParsingEvent;
-import lkc.lungrow.events.httpGetClearEvent;
+import lkc.httpconnection.events.JsonObjectParsingEvent;
+import lkc.httpconnection.events.httpGetClearEvent;
 import lkc.httpconnection.formatters.stringToJsonFormatter;
+import lkc.httpconnection.http.httpPost;
 import lkc.httpconnection.httpconnection;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
@@ -29,7 +30,15 @@ public class httpGetClearEventListener implements Listener {
                 JOPEvent.setFlag(true);
                 JOPEvent.setJsonObject(jsonObject);
                 JOPEvent.setPlayer(event.getPlayer());
-                Bukkit.getScheduler().runTask(httpCon, () -> Bukkit.getServer().getPluginManager().callEvent(JOPEvent));
+                if(!event.isCommand())
+                    Bukkit.getScheduler().runTask(httpCon, () -> Bukkit.getServer().getPluginManager().callEvent(JOPEvent));
+                else
+                    if(event.isPost()) {
+                        httpPost httppost = new httpPost(httpCon);
+                        httppost.PosthttpCommand(jsonObject, event.getPlayer());
+                    }
+
+
             }
         }
         else{

@@ -1,7 +1,6 @@
 package lkc.npcplugin;
 
-import lkc.npcplugin.commands.NPCCheckAndSpawn;
-import lkc.npcplugin.events.PlayerEvent;
+import lkc.npcplugin.listeners.PlayerEvent;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 

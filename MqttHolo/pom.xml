@@ -6,7 +6,7 @@
 
     <groupId>lkc</groupId>
     <artifactId>holographic</artifactId>
-    <version>1.1.0</version>
+    <version>1.4.0</version>
     <packaging>jar</packaging>
 
     <name>MqttHolo</name>
@@ -76,8 +76,14 @@
         </dependency>
         <dependency>
             <groupId>lkc</groupId>
-            <artifactId>Lungrow</artifactId>
-            <version>1.5.0</version>
+            <artifactId>httpconnection</artifactId>
+            <version>1.2.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>lkc</groupId>
+            <artifactId>mqttLungrow</artifactId>
+            <version>1.2.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

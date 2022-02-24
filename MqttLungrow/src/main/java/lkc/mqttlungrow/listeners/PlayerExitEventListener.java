@@ -18,7 +18,7 @@ public class PlayerExitEventListener implements Listener {
     public static void onPlayerExitEvent(PlayerQuitEvent event){
         // Plugin shutdown logic
         try {
-            JOPEL.closeMqtt();
+            JOPEL.unsubscribe(event.getPlayer());
         } catch (MqttException e) {
             getLogger().severe("Failed disconnecting from MQTT BROKER !");
         }

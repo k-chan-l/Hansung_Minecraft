@@ -1,6 +1,6 @@
 package lkc.npcplugin.schdulings;
 
-import lkc.lungrow.events.npcSpeakEvent;
+import lkc.npcplugin.events.npcSpeakEvent;
 import lkc.npcplugin.NPCPlugin;
 import net.citizensnpcs.api.npc.NPC;
 import org.bukkit.Bukkit;

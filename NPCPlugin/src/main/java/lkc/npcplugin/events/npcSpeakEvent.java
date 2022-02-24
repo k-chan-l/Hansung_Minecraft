@@ -1,4 +1,4 @@
-package lkc.lungrow.events;
+package lkc.npcplugin.events;
 
 import org.bukkit.entity.Entity;
 import org.bukkit.event.Event;

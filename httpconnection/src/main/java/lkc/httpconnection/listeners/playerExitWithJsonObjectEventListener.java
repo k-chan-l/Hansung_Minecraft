@@ -3,7 +3,7 @@ package lkc.httpconnection.listeners;
 import com.google.gson.JsonObject;
 import lkc.httpconnection.http.httpPost;
 import lkc.httpconnection.httpconnection;
-import lkc.lungrow.events.playerExitWithJsonObjectEvent;
+import lkc.httpconnection.events.playerExitWithJsonObjectEvent;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

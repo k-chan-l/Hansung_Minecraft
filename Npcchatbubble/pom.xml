@@ -6,7 +6,7 @@
 
     <groupId>lkc</groupId>
     <artifactId>npcchatbubble</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <packaging>jar</packaging>
 
     <name>Npcchatbubble</name>
@@ -76,8 +76,8 @@
         </dependency>
         <dependency>
             <groupId>lkc</groupId>
-            <artifactId>Lungrow</artifactId>
-            <version>1.4.0</version>
+            <artifactId>NPCPlugin</artifactId>
+            <version>1.5.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

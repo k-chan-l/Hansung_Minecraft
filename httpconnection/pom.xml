@@ -6,7 +6,7 @@
 
     <groupId>lkc</groupId>
     <artifactId>httpconnection</artifactId>
-    <version>1.0.0</version>
+    <version>1.2.0</version>
     <packaging>jar</packaging>
 
     <name>httpconnection</name>
@@ -74,12 +74,6 @@
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
             <version>4.9.1</version>
-        </dependency>
-        <dependency>
-            <groupId>lkc</groupId>
-            <artifactId>Lungrow</artifactId>
-            <version>1.5.0</version>
-            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>

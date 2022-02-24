@@ -3,7 +3,7 @@ version: '${project.version}'
 main: lkc.npcplugin.NPCPlugin
 api-version: 1.18
 depend: [ Citizens ]
-softdepend: [ event ]
+softdepend: [ httpconnection ]
 commands:
   settingnpc:
     description: npc 세팅

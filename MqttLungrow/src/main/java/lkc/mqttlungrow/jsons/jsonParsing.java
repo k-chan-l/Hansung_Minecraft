@@ -4,6 +4,8 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import lkc.mqttlungrow.MqttLungrow;
+import org.bukkit.Server;
+import org.bukkit.entity.Player;
 
 import java.util.logging.Logger;
 
@@ -20,6 +22,8 @@ public class jsonParsing {
         this.message = message;
         this.logger = logger;
     }
+
+
 
     private boolean keyValueParsing(){
         // gson을 이용하여 json string을 객체로 바꾼다.
@@ -49,12 +53,13 @@ public class jsonParsing {
         return true;
     }
 
-    public void updatemqttValue(){
+    public void updatemqttValue(Player player){
         if(!keyValueParsing())
             return;
         int inhaleValue = Integer.parseInt(inhale);
         int exhaleValue = Integer.parseInt(exhale);
-        mqttLungrow.updateValue(inhaleValue, exhaleValue);
+
+        mqttLungrow.updateValue(inhaleValue, exhaleValue, player);
     }
 
 }

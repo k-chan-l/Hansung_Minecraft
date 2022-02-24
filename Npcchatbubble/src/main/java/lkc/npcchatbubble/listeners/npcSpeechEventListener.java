@@ -2,7 +2,7 @@ package lkc.npcchatbubble.listeners;
 
 import com.gmail.filoghost.holographicdisplays.api.Hologram;
 import com.gmail.filoghost.holographicdisplays.api.HologramsAPI;
-import lkc.lungrow.events.npcSpeakEvent;
+import lkc.npcplugin.events.npcSpeakEvent;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
 import org.bukkit.event.EventHandler;

@@ -2,4 +2,16 @@ name: MqttHolo
 version: '${project.version}'
 main: lkc.holographic.MqttHolo
 api-version: 1.18
-softdepend: [ HolographicDisplays, event ]
+softdepend: [ HolographicDisplays, MqttLungrow, httpconnection ]
+commands:
+  reset:
+    usage: /<command>
+    description: reset redstone
+
+  buildblock:
+    usage: /<command>
+    description: build redstone
+
+  tpblock:
+    usage: /<command>
+    description: tp to redstone

@@ -6,7 +6,7 @@
 
     <groupId>lkc</groupId>
     <artifactId>MqttLungrow</artifactId>
-    <version>1.0.0</version>
+    <version>1.2.0</version>
     <packaging>jar</packaging>
 
     <name>MqttLungrow</name>
@@ -92,8 +92,8 @@
         </dependency>
         <dependency>
             <groupId>lkc</groupId>
-            <artifactId>Lungrow</artifactId>
-            <version>1.5.0</version>
+            <artifactId>httpconnection</artifactId>
+            <version>1.2.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

@@ -1,6 +1,6 @@
 package lkc.npcplugin.schdulings;
 
-import lkc.lungrow.events.npcSpeakEvent;
+import lkc.npcplugin.events.npcSpeakEvent;
 import lkc.npcplugin.NPCPlugin;
 import lkc.npcplugin.npc.NPCCheck;
 import net.citizensnpcs.api.ai.speech.SpeechContext;
@@ -8,6 +8,7 @@ import net.citizensnpcs.api.npc.NPC;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitScheduler;
 
@@ -110,7 +111,6 @@ public class repeatDistanceCheck {
         if(isDistanceOverNum(npc.getEntity().getLocation(), player.getLocation(), 10)) {//움직이면서 캐릭터와 거리가 10이상일경우
             npc.getNavigator().cancelNavigation();
             npc.faceLocation(player.getLocation());
-//            npc.getDefaultSpeechController().speak(new SpeechContext((String) "얼른 이리로와"));
             npcSpeakEvent event = new npcSpeakEvent(npc.getEntity(), "얼른 이리로와");
             getServer().getPluginManager().callEvent(event);
             getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "Stop and Wait");
@@ -146,6 +146,12 @@ public class repeatDistanceCheck {
             getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "The player is not logged in");
             scheduler.cancelTasks(plugin);
         }
+    }
+
+    private boolean npcEntityNullChecker(Entity entity){
+        if (entity == null)
+            return false;
+        return true;
     }
 
 
