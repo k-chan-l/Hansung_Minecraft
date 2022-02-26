@@ -1,0 +1,4 @@
+name: Letterbuild
+version: '${project.version}'
+main: lkc.letterbuild.Letterbuild
+api-version: 1.18
