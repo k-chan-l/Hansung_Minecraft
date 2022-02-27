@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class material {
-    public static Map<String, Material> block = new HashMap<String, Material>() {
+    public final static Map<String, Material> block = new HashMap<String, Material>() {
         {
             put("Stone",Material.STONE);
             put("Air",Material.AIR);
