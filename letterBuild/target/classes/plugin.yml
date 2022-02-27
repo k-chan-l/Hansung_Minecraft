@@ -1,0 +1,8 @@
+name: Letterbuild
+version: '0.1.0'
+main: lkc.letterbuild.Letterbuild
+api-version: 1.18
+commands:
+  letter:
+    usage: /<command> <option> <instance>
+    description: <option> -> (list, help, build) / <instance> -> help참조
