@@ -69,10 +69,10 @@ http연결을 하여 DynamoDB와 통신하는 플러그인
 usage : /letter <option> <instance>  
 \<option> -> (list, help, build)  
 list : 건설할 블록 종류를 사용자에게 보여줍니다.  
-\<instance> :  
+\<instance> : x  
   
 help : 사용방법을 알려줍니다.  
-\<instance> :  
+\<instance> : x  
   
 build : 문자를 입력하면 해당 문자에 해당하는 5*5 블럭을 건설합니다.  
 \<instance> : \<X> \<Y> \<Z> \<letter> \<MainBlockType> \<BackgroundBlockType>  
