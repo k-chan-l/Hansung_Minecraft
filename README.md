@@ -67,7 +67,7 @@ http연결을 하여 DynamoDB와 통신하는 플러그인
 사용시 블럭으로 글자를 입력한다.
   
 usage : /letter <option> <instance>  
-<option> -> (list, help, build)  
+\<option> -> (list, help, build)  
 list : 건설할 블록 종류를 사용자에게 보여줍니다.  
 <instance> :  
   
