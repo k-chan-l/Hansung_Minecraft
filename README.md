@@ -69,18 +69,18 @@ http연결을 하여 DynamoDB와 통신하는 플러그인
 usage : /letter <option> <instance>  
 \<option> -> (list, help, build)  
 list : 건설할 블록 종류를 사용자에게 보여줍니다.  
-<instance> :  
+\<instance> :  
   
 help : 사용방법을 알려줍니다.  
-<instance> :  
+\<instance> :  
   
 build : 문자를 입력하면 해당 문자에 해당하는 5*5 블럭을 건설합니다.  
-<instance> : <X> <Y> <Z> <letter> <MainBlockType> <BackgroundBlockType>  
+\<instance> : \<X> \<Y> \<Z> \<letter> \<MainBlockType> \<BackgroundBlockType>  
 위의 instance들을 순서대로 입력  
   
-<X> : 글자를 건설 할 왼쪽 아래의 블럭의 X좌표  
-<Y> : 글자를 건설 할 왼쪽 아래의 블럭의 Y좌표  
-<Z> : 글자를 건설 할 왼쪽 아래의 블럭의 Z좌표  
-<letter> : 건설할 글자의 종류 숫자,알파벳 대소문자 사용가능  
-<MainBlockType> : 글자의 블록 종류  
-<BackgroundBlockType> : 배경의 블록 종류
+\<X> : 글자를 건설 할 왼쪽 아래의 블럭의 X좌표  
+\<Y> : 글자를 건설 할 왼쪽 아래의 블럭의 Y좌표  
+\<Z> : 글자를 건설 할 왼쪽 아래의 블럭의 Z좌표  
+\<letter> : 건설할 글자의 종류 숫자,알파벳 대소문자 사용가능  
+\<MainBlockType> : 글자의 블록 종류  
+\<BackgroundBlockType> : 배경의 블록 종류
