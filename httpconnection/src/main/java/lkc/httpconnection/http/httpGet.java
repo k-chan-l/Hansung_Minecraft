@@ -42,7 +42,7 @@ public class httpGet {
 
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
-                .url("https://aeptktnm55.execute-api.ap-northeast-2.amazonaws.com/default/lungrow-minecraft-getInfo-ByPlayerName?"+subject+ "="+ playerName)
+                .url("https://************"+subject+ "="+ playerName)
                 .build();
 
         client.newCall(request).enqueue(new Callback() {
@@ -78,7 +78,7 @@ public class httpGet {
 
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
-                .url("https://aeptktnm55.execute-api.ap-northeast-2.amazonaws.com/default/lungrow-minecraft-getInfo-ByPlayerName?"+subject+ "="+ playerName)
+                .url("https://*********"+subject+ "="+ playerName)
                 .build();
 
         client.newCall(request).enqueue(new Callback() {
@@ -116,7 +116,7 @@ public class httpGet {
 
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
-                .url("https://aeptktnm55.execute-api.ap-northeast-2.amazonaws.com/default/lungrow-minecraft-getInfo-ByPlayerName?"+subject+ "="+ playerName)
+                .url("**********"+subject+ "="+ playerName)
                 .build();
 
         client.newCall(request).enqueue(new Callback() {
