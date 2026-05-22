@@ -36,6 +36,10 @@ Minecraft 안의 NPC, 홀로그램, 블록, 이동 경로 기록 등의 게임 �
 
 <img src="https://user-images.githubusercontent.com/71301248/156567528-e16a68d7-cfb2-4793-8bfe-3d6ce20b147d.png">
 
+하나의 Plugin에 모든 기능을 넣는 방식도 가능했지만,
+HTTP 데이터 연동, MQTT 실시간 데이터 수신, NPC 제어, 홀로그램 시각화,
+플레이어 경로 저장은 역할과 수정 범위가 다르다고 판단해 기능별 Plugin으로 분리했습니다.
+
 프로젝트 구조상 MQTT_Lungrow Plugin이
 실시간 장비 데이터의 중심 처리 역할을 담당하도록 구성했습니다.
 
