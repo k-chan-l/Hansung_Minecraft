@@ -1,4 +1,4 @@
-# Hansung Minecraft
+# Hansung Minecraft - Lungrow
 
 헬스케어 훈련 데이터를 Minecraft 서버와 연동하기 위해 제작한 Java 기반 Minecraft Plugin 프로젝트입니다.
 
