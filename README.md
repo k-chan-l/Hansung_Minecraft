@@ -32,7 +32,7 @@ Minecraft 안의 NPC, 홀로그램, 블록, 이동 경로 기록 등의 게임 �
 
 ---
 
-## 시스템 구조
+## 시스템 구조 및 설계 의도
 
 <img src="https://user-images.githubusercontent.com/71301248/156567528-e16a68d7-cfb2-4793-8bfe-3d6ce20b147d.png">
 
