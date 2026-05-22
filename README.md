@@ -34,28 +34,7 @@ Minecraft 안의 NPC, 홀로그램, 블록, 이동 경로 기록 등의 게임 �
 
 ## 시스템 구조
 
-```text
-[External Healthcare Service / DynamoDB]
-        ↑                         ↓
-   HTTP POST                 HTTP GET
-        ↑                         ↓
-[httpconnection Plugin] ── Bukkit Event ── [NPCPlugin]
-        │                         │
-        │                         └── NPC 생성 / 이동 / 대사 이벤트
-        │
-        ├── [checkpath Plugin]
-        │       └── 플레이어 이동 경로 기록
-        │
-        └── [MqttLungrow Plugin]
-                ├── MQTT Broker 연결
-                ├── 훈련 장비 데이터 구독
-                └── inhale / exhale 값 이벤트 발생
-                        ↓
-                [MqttHolo Plugin]
-                        ├── HolographicDisplays 기반 수치 표시
-                        ├── 호흡 단계 변화 처리
-                        └── 블록 상태 변경
-```
+<img src="https://user-images.githubusercontent.com/71301248/156567528-e16a68d7-cfb2-4793-8bfe-3d6ce20b147d.png">
 
 ---
 
@@ -287,34 +266,19 @@ Hansung_Minecraft
 ```
 
 ---
+## Architecture Design
 
-## 이벤트 중심 설계
+프로젝트 구조상 MQTT_Lungrow Plugin이
+실시간 장비 데이터의 중심 처리 역할을 담당하도록 구성했습니다.
 
-이 프로젝트는 플러그인 간 직접 호출을 최소화하고,  
-Bukkit Custom Event를 통해 기능을 연결하는 방식으로 구성했습니다.
+초기에는 각 Plugin이 직접 MQTT 데이터를 처리하는 방식도 고려했지만,
+기능 간 의존성이 증가하고 유지보수가 복잡해질 수 있다고 판단했습니다.
 
-```text
-HTTP 데이터 수신 완료
-    ↓
-httpGetClearEvent
-    ↓
-JsonObjectParsingEvent
-    ↓
-NPC / MQTT / Path 기능으로 분기
-    ↓
-lungrowValueUpdateEvent
-    ↓
-Hologram / Block 상태 갱신
-    ↓
-Player Quit Event
-    ↓
-playerExitWithJsonObjectEvent
-    ↓
-HTTP POST 저장
-```
+따라서 MQTT_Lungrow가 중앙에서 데이터를 수신하고,
+각 기능 Plugin이 필요한 이벤트만 처리하도록 역할을 분리했습니다.
 
-이 구조를 통해 각 플러그인의 역할을 분리하고,  
-기능 추가 시 이벤트 리스너를 확장하는 방식으로 연결할 수 있도록 했습니다.
+이를 통해 기능별 독립성을 유지하면서도
+실시간 데이터 흐름을 통합적으로 관리할 수 있도록 구성했습니다.
 
 ---
 
@@ -357,7 +321,6 @@ Minecraft Server
 - JSON 파싱 로직 공통화
 - 비동기 HTTP 요청 처리 개선
 - 플레이어별 세션 관리 구조 개선
-- README와 Wiki 이미지 정리
 
 ---
 
