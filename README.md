@@ -227,6 +227,28 @@ Chat Bubble / Hologram
 
 ---
 
+## 사용자별 MQTT 데이터 처리
+
+이 프로젝트는 훈련 장비에서 발생하는 실시간 호흡 데이터를 MQTT로 수신하고, 이를 Minecraft 게임 요소에 반영합니다. 초기에는 단일 사용자 기준으로 테스트했기 때문에 수신된 데이터를 바로 게임에 적용해도 문제가 없었습니다.
+
+하지만 여러 사용자가 동시에 접속하는 서버 환경에서는 수신된 `inhale`, `exhale` 값이 어떤 플레이어에게 적용되어야 하는지 구분해야 했습니다. MQTT Topic으로 사용자 정보는 구분할 수 있었지만, 서버 내부의 Player 객체와 연결되지 않으면 서로 다른 사용자의 훈련 정보가 섞일 수 있었습니다.
+
+이를 해결하기 위해 사용자별 Topic을 구독할 때 Minecraft의 `Player` 객체를 함께 저장했습니다. 이후 MQTT 메시지를 수신하면 Topic을 기준으로 Player를 찾고, 파싱한 `inhale`, `exhale` 값을 Player 정보와 함께 Custom Event로 전달하도록 수정했습니다.
+
+```java
+// 사용자별 Topic 구독 시 Player 객체를 함께 전달
+MQTT.subscribe(TOPIC.get(name), event.getPlayer());
+
+// MQTT 메시지 수신 시 Topic 기준으로 Player 조회
+Player user = player.get(topic);
+json.updatemqttValue(user);
+
+// 파싱한 호흡 값과 Player 정보를 Custom Event에 포함
+event.updateValue(inhale, exhale);
+event.setPlayer(player);
+
+---
+
 ## 기술 스택
 
 ### Server / Plugin
